@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "server",
+      "request": "launch",
+      "mainClass": "io.betweendata.auth.AuthenticationServiceApplication",
+      "args": "server config.yml",
+      "vmArgs": "-Ddw.tokenSecret=DEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUG"
+    }
+  ]
+}

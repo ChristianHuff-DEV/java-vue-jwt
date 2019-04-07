@@ -1,0 +1,206 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-02-26T18:11:10.349Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"created": 1546538326276,
+			"description": "",
+			"modified": 1546538326276,
+			"name": "user-service",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_34d42c1aa9064e4998f25260e29365a5",
+			"color": null,
+			"created": 1546538326313,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1546538326314,
+			"modified": 1546538326313,
+			"name": "New Environment",
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_f4c3c74e58cd4f2ea80a7f11d06508d6",
+			"cookies": [],
+			"created": 1546538326323,
+			"modified": 1546538326323,
+			"name": "Default Jar",
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_8fe6d072aa5e4af58f553f56d36717d5",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"email\": \"test@test.com\",\n  \"password\": \"test\"\n}"
+			},
+			"created": 1546538701621,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_590d9a02ad3e4c00a93a6aa4ecc4dc9d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1546538701622,
+			"method": "POST",
+			"modified": 1551203212185,
+			"name": "register",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7000/register",
+			"_type": "request"
+		},
+		{
+			"_id": "req_39c9c073ebea490baecff80f0cccaa5f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"email\": \"test@test.com\",\n  \"password\": \"test\"\n}"
+			},
+			"created": 1546884611192,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_a04a0d3570f04bfcadd26fdc3316f654",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1546884611192,
+			"method": "POST",
+			"modified": 1551203214736,
+			"name": "login",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7000/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d84c1e11866e4b47bb558cc777c27c1f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{  \n \"refresh_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NTE2MzUzMjcsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInN1YiI6IlJlZnJlc2hUb2tlbiJ9.JMBf2bkEsDlNcU79cBew1IGCVOtvXILeVbHwyr1bmspjhuI-UD7PhoGelaRWlvu7C32ZghbYQ9DRn9woOZ_x-g\"\n}"
+			},
+			"created": 1547054175384,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3226bb3b88e9480198eb751374c0f036",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1547054175384,
+			"method": "POST",
+			"modified": 1551203350640,
+			"name": "refresh",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7000/refresh",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aec1d4051f0a48e8adab7b5810524492",
+			"authentication": {
+				"token": "eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NTEyMDM2MjcsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInN1YiI6IkFjY2Vzc1Rva2VuIn0.JuSPvuqrjEnTqIRM5GX6ZOlRdl9rBByWKKjAwksoQHrhjJPN2xU2Iw46_7W6AOyt19ZHL6azxy7XH7NyC-d-HQ",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1547235360424,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547235360425,
+			"method": "GET",
+			"modified": 1551203336954,
+			"name": "getUser",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7000/user",
+			"_type": "request"
+		},
+		{
+			"_id": "req_723d1111b27f49c39eb87fb96900abaa",
+			"authentication": {},
+			"body": {},
+			"created": 1551203251265,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1551203251265,
+			"method": "GET",
+			"modified": 1551203270958,
+			"name": "metrics",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7001/metrics",
+			"_type": "request"
+		},
+		{
+			"_id": "req_742822ed84fe468ea71ded96737aae9e",
+			"authentication": {},
+			"body": {},
+			"created": 1551203292836,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1549219305845,
+			"method": "GET",
+			"modified": 1551203311097,
+			"name": "healthcheck",
+			"parameters": [],
+			"parentId": "wrk_e9e42c71d652446abdf14b2a8f9a805a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:7001/healthcheck",
+			"_type": "request"
+		}
+	]
+}

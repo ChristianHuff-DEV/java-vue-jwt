@@ -1,0 +1,9 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 7000
+  adminConnectors:
+    - type: http
+      port: 7001
+
+tokenSecret: CHANGE_ME

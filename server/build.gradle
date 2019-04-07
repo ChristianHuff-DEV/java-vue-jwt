@@ -1,0 +1,60 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'com.github.johnrengelman.shadow' version '4.0.2'
+}
+
+dependencies {
+	// Dropwizard.io
+	compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.3.9'
+    compile group: 'io.dropwizard', name: 'dropwizard-auth', version: '1.3.9'
+	
+	// Dependencies that dropwizard needs but are not available in Java 11 anymore
+	// These appearently can be removed once dropwizard 2 is released (see https://github.com/dropwizard/dropwizard/issues/2589)
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.1'
+	
+	// Library to handle JSON Web Token (JWT)
+	compile 'io.jsonwebtoken:jjwt-api:0.10.5'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.10.5',
+     		'io.jsonwebtoken:jjwt-jackson:0.10.5'
+            'org.bouncycastle:bcprov-jdk15on:1.60' // Dependency to use RSASSA-PSS (PS256, PS384, PS512) algorithms
+            
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+eclipse {
+    classpath {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    manifest {
+        attributes 'Implementation-Title': rootProject.name
+        attributes 'Implementation-Version': rootProject.version
+        attributes 'Implementation-Vendor-Id': rootProject.group
+        attributes 'Built-By': InetAddress.localHost.hostName
+        attributes 'Created-By': 'Gradle ' + gradle.gradleVersion
+        attributes 'Main-Class': 'de.christianhuff.service.authentication.AuthenticationServiceApplication'
+    }
+    archiveName 'authentication-service.jar'
+}
